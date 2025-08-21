@@ -1,0 +1,53 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+  remove|abort-install|disappear)
+    # Remove NetworkManager connection file
+    if [ -f "/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection" ]; then
+      rm -f "/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection" || true
+    fi
+    
+    # Remove polkit rule file
+    if [ -f "/etc/polkit-1/localauthority/50-local.d/10-network-manager-vpn.pkla" ]; then
+      rm -f "/etc/polkit-1/localauthority/50-local.d/10-network-manager-vpn.pkla" || true
+    fi
+    
+    # Restart NetworkManager to apply changes
+    if command -v systemctl >/dev/null 2>&1; then
+      systemctl restart NetworkManager || true
+    fi
+    
+    # Reload connections
+    if command -v nmcli >/dev/null 2>&1; then
+      nmcli connection reload || true
+    fi
+  ;;
+  purge)
+    # Additional cleanup for purge (same as remove for this package)
+    if [ -f "/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection" ]; then
+      rm -f "/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection" || true
+    fi
+    
+    if [ -f "/etc/polkit-1/localauthority/50-local.d/10-network-manager-vpn.pkla" ]; then
+      rm -f "/etc/polkit-1/localauthority/50-local.d/10-network-manager-vpn.pkla" || true
+    fi
+    
+    if command -v systemctl >/dev/null 2>&1; then
+      systemctl restart NetworkManager || true
+    fi
+    
+    if command -v nmcli >/dev/null 2>&1; then
+      nmcli connection reload || true
+    fi
+  ;;
+  upgrade|failed-upgrade|abort-upgrade)
+    # Do nothing during upgrade
+  ;;
+  *)
+    echo "postrm called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+esac
+
+exit 0 

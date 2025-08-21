@@ -1,5 +1,12 @@
-diyanet-vpn (1.0.0) unstable; urgency=medium
+diyanet-vpn (1.0.1) unstable; urgency=medium
 
-  * Initial release.
- 
- -- Serkan Oyanik <nakrerkan@gmail.com>  Thu, 21 Aug 2025 12:00:00 +0000 
+  * Add postrm script for proper package removal
+  * Clean up NetworkManager connection and polkit files on removal
+
+ -- Serkan Oyanik <nakrerkan@gmail.com>  Wed, 21 Aug 2024 16:15:00 +0300
+
+diyanet-vpn (1.0.0) unstable; urgency=low
+
+  * Initial release
+
+ -- Serkan Oyanik <nakrerkan@gmail.com>  Wed, 21 Aug 2024 12:00:00 +0300
