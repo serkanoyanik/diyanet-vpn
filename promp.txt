@@ -1,4 +1,0 @@
-1- diyanet-vpn projesi ile debian sistemler için deb uygulaması geliştiriyorum.
-2- @command.txt dosyasındaki yönergeler ile sisteme kurulum sağlıyoruz.bunu bash script ile yapalım.
-3- script, sudo yetkileri ile işlemi gerçekleştirecek,ilgili dizinlerin varlığını kontrol edecek, düzenlemeleri yapacak,sistemsel network yapılandırmaları sebebiyle  ilgili servisieri yeniden başlatacak.
-4- proje github'a gönderilecek.github tokenim var yardımcı tool'lar ile örneğin https yöntemi ile girebiliriz.github kullanıcı: serkanoyanik, e-mail: nakrerkan@gmail.com , yeni public repo oluşturulacak adı: diyanet-vpn
