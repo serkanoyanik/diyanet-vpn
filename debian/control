@@ -1,0 +1,15 @@
+Source: diyanet-vpn
+Section: admin
+Priority: optional
+Maintainer: Serkan Oyanik <nakrerkan@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: https://github.com/serkanoyanik/diyanet-vpn
+
+Package: diyanet-vpn
+Architecture: all
+Depends: ${misc:Depends}, network-manager-openconnect-gnome, network-manager-openconnect, openconnect
+Description: NetworkManager VPN profile and polkit config for Diyanet VPN
+ This package installs a preconfigured NetworkManager connection and
+ policykit rules to allow system-wide VPN configuration. 

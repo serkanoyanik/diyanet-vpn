@@ -1,0 +1,2 @@
+/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection
+/etc/polkit-1/localauthority/50-local.d/10-network-manager-vpn.pkla

@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+  configure|abort-upgrade|abort-remove|abort-deconfigure)
+    if [ -f "/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection" ]; then
+      chown root:root "/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection" || true
+      chmod 600 "/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection" || true
+    fi
+    if command -v systemctl >/dev/null 2>&1; then
+      systemctl restart NetworkManager || true
+    fi
+    if command -v nmcli >/dev/null 2>&1; then
+      nmcli connection reload || true
+    fi
+  ;;
+  *)
+  ;;
+esac
+
+exit 0 

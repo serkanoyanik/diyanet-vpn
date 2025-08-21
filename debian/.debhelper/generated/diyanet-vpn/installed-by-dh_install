@@ -1,0 +1,2 @@
+./etc/NetworkManager/system-connections/diyanet-vpn.nmconnection
+./debian/10-network-manager-vpn.pkla

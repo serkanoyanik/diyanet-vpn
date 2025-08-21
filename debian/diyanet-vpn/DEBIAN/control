@@ -1,0 +1,12 @@
+Package: diyanet-vpn
+Version: 1.0.0
+Architecture: all
+Maintainer: Serkan Oyanik <nakrerkan@gmail.com>
+Installed-Size: 17
+Depends: network-manager-openconnect-gnome, network-manager-openconnect, openconnect
+Section: admin
+Priority: optional
+Homepage: https://github.com/serkanoyanik/diyanet-vpn
+Description: NetworkManager VPN profile and polkit config for Diyanet VPN
+ This package installs a preconfigured NetworkManager connection and
+ policykit rules to allow system-wide VPN configuration.

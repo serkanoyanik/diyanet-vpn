@@ -1,0 +1,13 @@
+# set vpn
+apt-get install -y network-manager-openconnect-gnome network-manager-openconnect openconnect
+
+install -Dm600 $FOLDER/etc/NetworkManager/system-connections/diyanet-vpn.nmconnection /etc/NetworkManager/system-connections/diyanet-vpn.nmconnection
+
+cat > /etc/polkit-1/localauthority/50-local.d/10-network-manager-vpn.pkla << EOF
+[Enable NetworkManager Settings for All Users]
+Identity=unix-user:*
+Action=org.freedesktop.NetworkManager.settings.modify.system
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+EOF
