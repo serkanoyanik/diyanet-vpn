@@ -1,0 +1,19 @@
+# Debian package build artifacts
+*.deb
+*.buildinfo
+*.changes
+*.dsc
+*.build
+*.tar.*
+
+# debhelper/dpkg outputs
+/debian/.debhelper/
+/debian/debhelper-build-stamp
+/debian/files
+/debian/*.substvars
+/debian/*.log
+/debian/tmp/
+/debian/diyanet-vpn/
+
+# Editor/OS noise
+.DS_Store 
