@@ -15,5 +15,8 @@
 /debian/tmp/
 /debian/diyanet-vpn/
 
+# Development files
+command.txt
+
 # Editor/OS noise
 .DS_Store 
